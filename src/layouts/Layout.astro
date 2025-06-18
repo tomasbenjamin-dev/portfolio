@@ -1,3 +1,10 @@
+---
+import Header from "../components/Header.astro"
+import Hero from "../components/Hero.astro"
+import '../styles/global.css';
+import '@fontsource-variable/onest';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,17 +15,31 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		
+		<Header />
 		<slot />
+		<Hero />
+		
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		text-align: center;
+	:root{
+		color-scheme: light dark;
+		
+	}
+	html{
+		font-family: 'Onest Variable', sans-serif;
+	}
+	body{
+		background-color: #050505;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	body>div{
+		@apply container
 	}
 </style>
