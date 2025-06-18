@@ -1,11 +1,27 @@
 ---
 import '../styles/global.css';
+const name = 'Hola, soy Tomas Ponce'
+const title = 'Bienvenido a mi portfolio'
+const description = 'Este es mi portfolio personal, donde muestro mis proyectos y habilidades.'
+const skills = ['JavaScript', 'React', 'Node.js', 'CSS', 'HTML'];
 ---
 
 <div id="container" >
 	<a href="/">Home</a>
-    <a href="/about">Sobre mí</a>	
-	<h1 >Welcome to my first page</h1>
-	<p>Description</p>
-	 <p class="text-gray-600">This is a simple page created with Astro.</p>
+    <a href="/about">Sobre mí</a>
+	<h1>{name}</h1>
+	<h2 >{title}</h2>
+	<p>{description}</p>
+	
+	<h3>Skills</h3>
+	 <ul>
+		{skills.map(skill => (
+	  	<li>{skill}</li>
+		))}
+	</ul>
+	<ul>
+      	<li><a href="/posts/post-1/">Publicación 1</a></li>
+	  	<li><a href="/posts/post-2/">Publicación 2</a></li>
+		<li><a href="/posts/post-3/">Publicación 3</a></li>
+    </ul>
 </div>
