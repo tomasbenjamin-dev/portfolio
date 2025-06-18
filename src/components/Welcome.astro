@@ -9,14 +9,14 @@ const skills = ['JavaScript', 'React', 'Node.js', 'CSS', 'HTML'];
 <div id="container" >
 	<a href="/">Home</a>
     <a href="/about">Sobre mí</a>
-	<h1>{name}</h1>
-	<h2 >{title}</h2>
+	<h1 class="text-purple-400 text-[3rem]">{name}</h1>
+	<h2 class="text-blue-950 text-[2rem]">{title}</h2>
 	<p>{description}</p>
 	
 	<h3>Skills</h3>
-	 <ul>
+	<ul class="text-green-800 font-bold">
 		{skills.map(skill => (
-	  	<li>{skill}</li>
+			<li>{skill}</li>
 		))}
 	</ul>
 	<ul>
