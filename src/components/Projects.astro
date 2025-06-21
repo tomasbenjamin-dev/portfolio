@@ -1,0 +1,86 @@
+---
+const TAGS = {
+  HTML: { name: 'HTML', class: 'bg-orange-400 text-white' },
+  CSS: { name: 'CSS', class: 'bg-blue-500 text-white' },
+  JavaScript: { name: 'JavaScript', class: 'bg-yellow-300 text-black' },
+  Tailwind: { name: 'Tailwind CSS', class: 'bg-white text-sky-600 border border-sky-600' },
+}
+
+const PROYECTS = [
+  {
+    title: "Tabla de Precios",
+    description: "Modelo de tablas de precios.",
+    link: "#",
+    image:"/projects/pricingtables.webp",
+    tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS, TAGS.Tailwind]
+  },
+  {
+    title: "Tic-Tac-Toe",
+    description: "Juego clásico de Tic-Tac-Toe.",
+    link: "#",
+    image: "/projects/tic-tac-toe.webp",
+    tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS]
+  },
+  {
+    title: "Tarjeta de Usuario",
+    description: "Tarjeta simple de presentación.",
+    link: "#",
+    image: "/projects/usercard.webp",
+    tags: [TAGS.HTML, TAGS.CSS]
+  },
+  {
+    title:"Links Page",
+    description: "Página de enlaces personalizable.",
+    link: "#",
+    image: "/projects/links-page.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.Tailwind]
+  }
+]
+---
+<h2 class="text-4xl font-bold mb-12 text-center drop-shadow-lg">
+  Proyectos
+</h2>
+
+<div class="grid gap-10 md:grid-cols-2 xl:grid-cols-3 justify-items-center">
+  {
+    PROYECTS.map((project) => (
+      <article class="group relative p-6 bg-gray-950 rounded-2xl shadow-xl shadow-black/40 transition-transform transform hover:-translate-y-2 hover:scale-[1.02] duration-300 hover:ring-2 hover:ring-emerald-400 hover:bg-gray-900">
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
+          <img
+            class="rounded-xl shadow-lg group-hover:brightness-110 group-hover:scale-[1.02] transition duration-300"
+            src={project.image}
+            alt={`Captura de pantalla del proyecto ${project.title}`}
+          />
+        </a>
+        <div class="flex flex-col mt-4">
+          <h3 class="text-2xl font-semibold text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+            {project.title}
+          </h3>
+          <p class="text-gray-300 mt-2 mb-4 text-sm leading-relaxed">
+            {project.description}
+          </p>
+
+          <ul class="flex flex-wrap gap-2">
+            {project.tags.map(tag => (
+              <li>
+                <span class={`px-3 py-1 rounded-full text-xs font-semibold transition-transform duration-300 transform hover:scale-105 ${tag.class}`}>
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+    ))
+  }
+    <article class="flex flex-col items-center justify-center text-center p-6 bg-gray-900 rounded-2xl border border-dashed border-emerald-500/40 shadow-inner shadow-emerald-900/10 transition hover:shadow-lg hover:-translate-y-1 hover:scale-105 duration-300 w-full">
+    <div class="text-emerald-400 mb-4 animate-pulse">
+      <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-6h6v6m2 4H7a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h6a2 2 0 012 2v10a2 2 0 01-2 2z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-semibold text-gray-300">Próximamente</h3>
+    <p class="text-sm text-gray-500 mt-1">Más proyectos en camino...</p>
+    </article>
+  </div>
+</div>

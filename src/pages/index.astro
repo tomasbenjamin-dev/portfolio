@@ -1,25 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
 ---
 
 <Layout>
-  <main>
+  <main class="">
 	
-	<section class="flex flex-col text-left justify-center w-fit mt-30">
-		<div class="flex flex-row items-center gap-x-3 w-fit">
+	<SectionContainer >
+		<div class="px-30">
+		<div class="flex flex-row items-center gap-x-3 ">
 		<img src="/Gtvqx4TXgAAdIpa.jpg" alt="" class="size-35 mb-4 rounded-full shadow-lg object-cover" />
-		<Badge > <a href="https://www.linkedin.com/in/tomas-ponce-22a1b533a/" target="_blank" >Disponible para trabajar</a> </Badge>
+		<Badge class="hover:bg-gray-800 hover:text-gray-300 transition"> <a href="https://www.linkedin.com/in/tomas-ponce-22a1b533a/" target="_blank" >Disponible para trabajar</a> </Badge>
 		
 		</div>
 		<p class="opacity-70">Hola, soy</p> 
 		<h1 class="text-5xl font-bold">Tomás Ponce</h1>
-		<h2 class="text-xl font-semibold text-wrap opacity-80">Un apasionado desarrollador web con experiencia en <span class="text-amber-200">JavaScript</span> y <span class="text-amber-600">Astro</span>. <br> Me encanta crear aplicaciones web interactivas y eficientes.</h2>
-		
-	</section>
+		<h2 class="text-xl font-semibold wrap-break-word">Un apasionado desarrollador web con experiencia en <span class="text-amber-200">JavaScript</span> y <span class="text-amber-600">Astro</span>. <br> <span class="text-sky-300">De Santiago del Estero, Argentina.</span><br> Me encanta crear aplicaciones web interactivas y eficientes.</h2>
+		</div>
+	</SectionContainer>
 
-	<section>
-
-	</section>
+	<SectionContainer id="projects">
+		<Projects />
+	</SectionContainer>
+	<SectionContainer id="about">
+		<About />
+	</SectionContainer>
+	<SectionContainer id="skills">
+		<Skills/>
+	</SectionContainer>
   </main>
 </Layout>
